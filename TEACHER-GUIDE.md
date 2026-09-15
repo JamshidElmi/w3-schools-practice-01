@@ -4,17 +4,17 @@ Start here: open `website/index.html` in a browser and open the same file in you
 
 ## What is included
 
-Plain HTML, one independent CSS file per page, Ionicons, Google Fonts, one generated reusable image placeholder, local sample media, and separate scripts only for later interactive lessons. There is no npm install, bundler, framework or database.
+Plain HTML, one independent CSS file per page, Ionicons, Google Fonts, 12 themed city images plus a reusable placeholder for lab experiments, local sample media, and separate scripts only for later interactive lessons. There is no npm install, bundler, framework or database.
 
 All place descriptions, events, prices and contact details are classroom samples. Booking and contact forms navigate to a demo confirmation; they do not reserve, email or store requests.
 
 ## How to prepare
 
-1. Extract the ZIP. Keep the folder structure intact.
-2. Open `website/index.html` to inspect the finished result.
+1. Clone the repository with `git clone https://github.com/JamshidElmi/w3-schools-practice-01.git`, or use Code → Download ZIP on GitHub. Keep the folder structure intact.
+2. Open `website/index.html` to inspect the finished result. The same site is live at https://jamshidelmi.github.io/w3-schools-practice-01/ for students without a local copy; it updates about a minute after each push to `main`.
 3. Make an empty `student-work` folder beside `website`. Build there during lessons, using the finished source as a reference.
 4. Open `website/teacher-guide.html` for this guide in your browser. The `chapter-map.html` checklist maps each current tutorial lesson and sublesson to a file/block.
-5. For ordinary HTML/CSS, opening files is enough. For Workers, predictable storage and SSE, install Python if needed, open a terminal in the extracted folder and run `python server.py` (Windows may use `py server.py`). Visit `http://localhost:8000`. Stop with Ctrl+C. The server binds only to localhost.
+5. For ordinary HTML/CSS, opening files is enough. For Workers, predictable storage and SSE, install Python if needed, open a terminal in the project folder and run `python server.py` (Windows may use `py server.py`). Visit `http://localhost:8000`. Stop with Ctrl+C. The server binds only to localhost. The SSE demo does not work on the live GitHub Pages site.
 6. Internet is required for Google Fonts, Ionicons and the optional YouTube embed. Local text, fallback fonts, image and media continue to work without it.
 
 ## Your repeatable teaching routine
@@ -67,11 +67,11 @@ All ordinary pages have their own CSS and no shared CSS imports. C01–C04 and C
 
 **Open:** index.html · H04; css/index.css · C05
 
-**Explain:** src locates the image, alt supplies a text alternative, dimensions reserve space. figure and figcaption relate media to its caption. Decorative images need empty alt; this placeholder has a descriptive alt.
+**Explain:** src locates the image, alt supplies a text alternative, dimensions reserve space. figure and figcaption relate media to its caption. Decorative images need empty alt; each image here has an alt that describes what is actually in it.
 
-**Demonstrate:** Use assets/placeholder.png. Temporarily change src to a missing filename and observe the fallback. Restore it.
+**Demonstrate:** Open assets/imgs/illustrated-skyline-hero.webp directly in the browser, then find its img element in H04. Temporarily change src to a missing filename and observe the alt fallback. Restore it.
 
-**Student task:** Replace one image copy with a real photograph later and update alt and dimensions.
+**Student task:** Swap the hero for another image from assets/imgs/ and rewrite its alt to describe the new picture.
 
 **Checkpoint:** Student explains why alt should describe the actual image, not say image of.
 
@@ -380,9 +380,11 @@ All ordinary pages have their own CSS and no shared CSS imports. C01–C04 and C
 | teacher-guide.html + css/teacher-guide.css | Teaching sequence | Guide sections |
 | chapter-map.html + css/chapter-map.css | Topic coverage checklist | HTML and CSS tables |
 
-## Replacing images later
+## Images
 
-`website/assets/placeholder.png` is the generated master placeholder. Every photographic image uses it, including the video poster and CSS background/sprite/mask experiments. You can replace this master file to update all instances or put real images beside it and update each src. Update alt to describe each new photograph. CSS paths use `../assets/` because CSS files are one folder deeper. SVG route, favicon and mask are code examples, not photographic placeholders. `sample-video.mp4` is a silent five-second still-image clip; replace its source, caption track and transcript together. `sample-tone.wav` is a generated two-second tone.
+The content pages (home, attractions, attraction, events, gallery and map) use 12 themed city images in `website/assets/imgs/`, named by subject, for example `market-street.webp` or `lakeside-music-sunset.webp`. They are WebP files at 1536×1024, compressed to roughly 45–430 KB each, which is why every img keeps `width="1536" height="1024"`. To swap one, save the new image at the same 3:2 size (or update width and height), change src and rewrite alt to describe the new picture. Keep files small: export photos as WebP or JPG around 1536 px wide rather than full-size camera files, and check the Network panel.
+
+`website/assets/placeholder.png` is a generic placeholder kept for the lab experiments: the image map, float, filters, sprites, masks, form image button, object/embed and the video poster. Replacing that one file updates all of those demos at once. CSS paths use `../assets/` because CSS files are one folder deeper. SVG route, favicon and mask are code examples, not photographic placeholders. `sample-video.mp4` is a silent five-second still-image clip; replace its source, caption track and transcript together. `sample-tone.wav` is a generated two-second tone.
 
 ## Common debugging checklist
 
