@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ========== H01: DOCUMENT AND HEAD ==========
+         TEACH: doctype selects modern HTML; lang identifies language.
+         charset enables Unicode, viewport supports mobile layouts, and title names the browser tab.
+         The stylesheet link loads this page's separate CSS. Google Fonts needs internet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A later reference lesson. These fields are demonstrations, not a registration form.">
+    <title>Forms, one control at a time. | Discover Toronto</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/lab-forms.css">
+  </head>
+  <body>
+    <!-- ========== H02: HEADER AND NAVIGATION ==========
+       TEACH: semantic header/nav, relative links, lists, reusable classes.
+       Ionicons are decorative here; visible link text supplies the name. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <ion-icon name="compass-outline" aria-hidden="true"></ion-icon> Discover Toronto<span aria-hidden="true">.</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="attractions.html">Explore</a>
+            </li>
+            <li>
+              <a href="events.html">Events</a>
+            </li>
+            <li>
+              <a href="planner.html">Plan a trip</a>
+            </li>
+            <li>
+              <a href="booking.html">Book a visit</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ========== H03: MAIN CONTENT ==========
+       TEACH: one main landmark and one descriptive h1; heading order matters. -->
+    <main class="container" id="main">
+      <div class="page-heading">
+        <p class="eyebrow">A little curiosity. A whole city.</p>
+        <h1>Forms, one control at a time.</h1>
+        <p class="lead">A later reference lesson. These fields are demonstrations, not a registration form.</p>
+      </div>
+      <!-- ========== H04: INPUT TYPE SAMPLER ==========
+         TEACH: Compare browser input widgets, validation, name/value submission and form ownership. Hidden is not secure. -->
+      <section id="h04">
+        <form id="input-demo" action="confirmation.html" method="get">
+          <fieldset>
+            <legend>Input type sampler — use fictional data</legend>
+            <label for="demo-text">Trip nickname (text)</label>
+            <input type="text" id="demo-text" name="text" value="City day" maxlength="30">
+            <label for="demo-password">Practice password (use fake text) (password)</label>
+            <input type="password" id="demo-password" name="password" minlength="4">
+            <label for="demo-email">Practice email (email)</label>
+            <input type="email" id="demo-email" name="email" multiple placeholder="alex@example.com">
+            <label for="demo-url">Trip website (url)</label>
+            <input type="url" id="demo-url" name="url" placeholder="https://example.com">
+            <label for="demo-tel">Phone digits (tel)</label>
+            <input type="tel" id="demo-tel" name="tel" pattern="[0-9]{10}" title="Ten digits without spaces">
+            <label for="demo-search">Search idea (search)</label>
+            <input type="search" id="demo-search" name="search" placeholder="parks">
+            <label for="demo-number">Tickets (number)</label>
+            <input type="number" id="demo-number" name="number" min="1" max="8" step="1" value="2">
+            <label for="demo-range">Walking distance (range)</label>
+            <input type="range" id="demo-range" name="range" min="1" max="10" value="4">
+            <label for="demo-color">Notebook colour (color)</label>
+            <input type="color" id="demo-color" name="color" value="#174f7e">
+            <label for="demo-date">Trip day (date)</label>
+            <input type="date" id="demo-date" name="date">
+            <label for="demo-datetime-local">Meeting date and time (datetime-local)</label>
+            <input type="datetime-local" id="demo-datetime-local" name="datetime-local">
+            <label for="demo-month">Travel month (month)</label>
+            <input type="month" id="demo-month" name="month">
+            <label for="demo-week">Travel week (week)</label>
+            <input type="week" id="demo-week" name="week">
+            <label for="demo-time">Meeting time (time)</label>
+            <input type="time" id="demo-time" name="time">
+            <label for="demo-file">Practice attachment (file)</label>
+            <input type="file" id="demo-file" name="file" accept="image/*" multiple>
+            <label>
+              <input type="checkbox" name="newsletter" checked> Practice checkbox</label>
+            <label>
+              <input type="radio" name="transport" value="walk" checked> Walk</label>
+            <label>
+              <input type="radio" name="transport" value="bike"> Bike</label>
+            <label for="district">District suggestion (datalist)</label>
+            <input id="district" name="district" list="districts">
+            <datalist id="districts">
+              <option value="Waterfront"></option>
+              <option value="Downtown"></option>
+            </datalist>
+            <label for="read-only">Readonly: included in submission</label>
+            <input id="read-only" name="reference" value="DEMO-001" readonly>
+            <label for="disabled">Disabled: not submitted</label>
+            <input id="disabled" value="Not available" disabled>
+            <input type="hidden" name="hidden-example" value="Hidden is not secret">
+            <label for="image-submit">Image submit button</label>
+            <input id="image-submit" type="image" src="assets/placeholder.png" alt="Submit sample form" width="120" height="80">
+            <input type="button" value="Calculate double tickets" id="double-tickets">
+            <p>Double tickets: <output id="ticket-output" for="demo-number">4</output>
+            </p>
+            <input type="submit" value="Submit demo">
+            <input type="reset" value="Reset demo">
+          </fieldset>
+          <button type="submit" formaction="confirmation.html" formmethod="get" formtarget="_self" formnovalidate>Submit without browser validation (demo)</button>
+        </form>
+        <label for="outside-input">Input outside the form, linked by form attribute</label>
+        <input id="outside-input" name="outside" form="input-demo" size="20">
+        <p>File selection is demonstrated only. A real upload requires POST, multipart/form-data and a backend.</p>
+      </section>
+      <!-- ========== H05: UPLOAD FORM ATTRIBUTES ==========
+         TEACH: enctype controls encoding; this disabled demonstration prevents posting to a nonexistent upload endpoint. -->
+      <section id="h05">
+        <form action="confirmation.html" method="post" enctype="multipart/form-data">
+          <label for="upload-only">Choose an example file</label>
+          <input id="upload-only" type="file" name="photo">
+          <button disabled formenctype="multipart/form-data">Upload unavailable: no backend</button>
+        </form>
+      </section>
+    </main>
+    <!-- ========== H90: FOOTER ==========
+       TEACH: footer, entity for copyright, descriptive navigation links. -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <strong>Discover Toronto.</strong> Your next story starts here.</p>
+        <div class="footer-links">
+          <a href="attraction.html">Attraction details</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="media.html">Media centre</a>
+          <a href="guide.html">City guide</a>
+          <a href="contact.html">Contact</a>
+          <a href="lab.html">Learning lab</a>
+          <a href="teacher-guide.html">Teacher guide</a>
+        </div>
+        <p>
+          <small>© 2026 Discover Toronto. Classroom demo. All events, prices and contact details are fictional.</small>
+        </p>
+      </div>
+    </footer>
+    <!-- ========== H91: EXTERNAL ICON LIBRARY ==========
+       TEACH LATER: Ionicons uses JavaScript web components; it is not an HTML tag built into browsers.
+       Internet is needed for icons and Google Fonts. Text and fallback fonts still work offline. -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/forms.js" defer></script>
+  </body>
+</html>

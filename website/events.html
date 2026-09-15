@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ========== H01: DOCUMENT AND HEAD ==========
+         TEACH: doctype selects modern HTML; lang identifies language.
+         charset enables Unicode, viewport supports mobile layouts, and title names the browser tab.
+         The stylesheet link loads this page's separate CSS. Google Fonts needs internet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find a little music, a guided walk or a creative afternoon.">
+    <title>A date with the city. | Discover Toronto</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/events.css">
+  </head>
+  <body>
+    <!-- ========== H02: HEADER AND NAVIGATION ==========
+       TEACH: semantic header/nav, relative links, lists, reusable classes.
+       Ionicons are decorative here; visible link text supplies the name. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <ion-icon name="compass-outline" aria-hidden="true"></ion-icon> Discover Toronto<span aria-hidden="true">.</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="attractions.html">Explore</a>
+            </li>
+            <li>
+              <a href="events.html" aria-current="page">Events</a>
+            </li>
+            <li>
+              <a href="planner.html">Plan a trip</a>
+            </li>
+            <li>
+              <a href="booking.html">Book a visit</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ========== H03: MAIN CONTENT ==========
+       TEACH: one main landmark and one descriptive h1; heading order matters. -->
+    <main class="container" id="main">
+      <div class="page-heading">
+        <p class="eyebrow">A little curiosity. A whole city.</p>
+        <h1>A date with the city.</h1>
+        <p class="lead">Find a little music, a guided walk or a creative afternoon.</p>
+      </div>
+      <!-- ========== H04: EVENT CARDS ==========
+         TEACH: time gives a machine-readable datetime value. -->
+      <section id="h04">
+        <div class="cards">
+          <article class="card">
+            <img src="assets/imgs/lakeside-music-sunset.png" alt="An acoustic trio performing for a seated crowd by the lake at sunset" width="1536" height="1024" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Toronto collection</span>
+              <h3>Lakeside music</h3>
+              <p>
+                <time datetime="2026-10-03">October 3</time> · Sample outdoor concert.</p>
+              <a href="booking.html">Explore Lakeside music</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/imgs/neighbourhood-walking-tour.png" alt="A guide talking with a small tour group on a leafy residential street" width="1536" height="1024" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Toronto collection</span>
+              <h3>Neighbourhood walk</h3>
+              <p>
+                <time datetime="2026-10-10">October 10</time> · Sample guided tour.</p>
+              <a href="booking.html">Explore Neighbourhood walk</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/imgs/creative-art-workshop.png" alt="People painting watercolours together at a long table in a bright studio" width="1536" height="1024" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Toronto collection</span>
+              <h3>Creative afternoon</h3>
+              <p>
+                <time datetime="2026-10-17">October 17</time> · Sample art workshop.</p>
+              <a href="booking.html">Explore Creative afternoon</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- ========== H05: SCHEDULE TABLE ==========
+         TEACH: caption names the table; scope connects headers to cells. colspan and rowspan merge cells. colgroup styles columns. -->
+      <section id="h05">
+        <h2>Sample weekend schedule</h2>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable event schedule">
+          <table>
+            <caption>Fictional event timetable — practice data</caption>
+            <colgroup>
+              <col>
+              <col span="2" class="schedule-columns">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Time</th>
+                <th scope="col">Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" rowspan="2">Saturday</th>
+                <td>10:00</td>
+                <td>Walking tour</td>
+              </tr>
+              <tr>
+                <td>14:00</td>
+                <td>Art workshop</td>
+              </tr>
+              <tr>
+                <th scope="row">Sunday</th>
+                <td colspan="2">Free exploration day</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <!-- ========== H90: FOOTER ==========
+       TEACH: footer, entity for copyright, descriptive navigation links. -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <strong>Discover Toronto.</strong> Your next story starts here.</p>
+        <div class="footer-links">
+          <a href="attraction.html">Attraction details</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="media.html">Media centre</a>
+          <a href="guide.html">City guide</a>
+          <a href="contact.html">Contact</a>
+          <a href="lab.html">Learning lab</a>
+          <a href="teacher-guide.html">Teacher guide</a>
+        </div>
+        <p>
+          <small>© 2026 Discover Toronto. Classroom demo. All events, prices and contact details are fictional.</small>
+        </p>
+      </div>
+    </footer>
+    <!-- ========== H91: EXTERNAL ICON LIBRARY ==========
+       TEACH LATER: Ionicons uses JavaScript web components; it is not an HTML tag built into browsers.
+       Internet is needed for icons and Google Fonts. Text and fallback fonts still work offline. -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

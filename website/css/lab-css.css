@@ -1,0 +1,812 @@
+/* ========== C01: PAGE DEFAULTS ==========
+   The universal selector includes padding and borders in declared widths.
+   Body typography is inherited. rem is relative to the root font size. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: #172b42;
+  background: #fff;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.04em;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: #155a9c;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: #943617;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, summary {
+  cursor: pointer;
+}
+
+/* ========== C02: SHARED PAGE SHELL (COPIED FOR INDEPENDENCE) ==========
+   .container centers content with auto margins. Flexbox arranges navigation.
+   This block is deliberately repeated in each page CSS: no hidden imports. */
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 1px solid #dbe3eb;
+  background: white;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #172b42;
+}
+
+.brand ion-icon {
+  color: #c04e28;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a[aria-current='page'] {
+  color: #a93917;
+  border-bottom: 2px solid currentColor;
+}
+
+main {
+  min-height: 65vh;
+}
+
+section {
+  padding: 2.5rem 0;
+}
+
+.page-heading {
+  padding: 3.5rem 0 1rem;
+}
+
+.eyebrow {
+  color: #a93917;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #42586e;
+}
+
+.site-footer {
+  background: #102d49;
+  color: white;
+  padding: 2.5rem 0;
+  margin-top: 3rem;
+}
+
+.site-footer a {
+  color: #d7e9fa;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ========== C03: BASIC REUSABLE ELEMENTS ==========
+   A class can style many elements. Padding is inside; margin is outside.
+   Use a link for navigation and a button for an action. */
+.button, button {
+  display: inline-block;
+  background: #174f7e;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #174f7e;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button:hover, button:hover {
+  background: #113b60;
+  color: white;
+}
+
+.secondary {
+  color: #174f7e;
+  background: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  border: 1px solid #dbe3eb;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.note {
+  background: #eef5fa;
+  border-left: 4px solid #276493;
+  padding: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  background: #edf3f8;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+
+/* ========== C04: KEYBOARD ACCESS ==========
+   :focus-visible makes keyboard focus clear. The skip link appears on focus. */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+  outline: 3px solid #bd481e;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  background: white;
+  padding: 0.8rem;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ========== C10: COLOUR AND BACKGROUNDS ==========
+   TEACH: Compare named colours, HEX, RGB/RGBA and HSL/HSLA. Background layers paint front to back. */
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.swatches span {
+  padding: 1rem;
+  border: 2px solid currentColor;
+}
+
+.named {
+  color: navy;
+  background-color: transparent;
+}
+
+.hex {
+  background: #e5efff;
+  color: #123456;
+}
+
+.rgb {
+  background: rgba(20, 90, 170, 0.15);
+  color: rgb(20, 60, 100);
+}
+
+.hsl {
+  background: hsla(210, 60%, 90%, 0.8);
+  color: hsl(210, 65%, 25%);
+}
+
+.background-demo {
+  color: #102d49;
+  padding: 2rem;
+  border: 8px dashed #7890a5;
+  margin-top: 1rem;
+  background-image: linear-gradient(#ffffffcc, #ffffffcc), url('../assets/placeholder.png');
+  background-size: cover, 200px auto;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-origin: padding-box;
+  background-clip: border-box;
+}
+
+/* ========== C11: BOX MODEL AND MARGIN COLLAPSE ==========
+   TEACH: Inspect content, padding, border, margin and outline in DevTools. Adjacent vertical block margins can collapse. */
+.box-demo {
+  width: 260px;
+  max-width: 100%;
+  min-height: 80px;
+  padding: 20px;
+  margin: 20px;
+  border-style: solid dashed;
+  border-width: 3px;
+  border-color: #174f7e;
+  border-left: 8px solid #bd481e;
+  border-radius: 12px;
+  outline: 2px dotted #174f7e;
+  outline-offset: 5px;
+  background: #edf4fa;
+}
+
+.collapse-demo {
+  display: flow-root;
+}
+
+.collapse-demo p:first-child {
+  margin-bottom: 30px;
+}
+
+.collapse-demo p + p {
+  margin-top: 20px;
+}
+
+/* ========== C12: TYPOGRAPHY AND TEXT EFFECTS ==========
+   TEACH: Test alignment, decoration, transformation, spacing, font fallback, wrapping and truncation. */
+.type-demo {
+  font: italic 700 1.3rem/1.8 Georgia, 'Times New Roman', serif;
+  text-align: center;
+  text-decoration: underline dotted #bd481e 2px;
+  text-transform: uppercase;
+  text-indent: 1em;
+  letter-spacing: 0.06em;
+  word-spacing: 0.2em;
+  text-shadow: 1px 2px 2px #ccd8e2;
+}
+
+.ellipsis {
+  width: 220px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.word-wrap {
+  width: 220px;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* ========== C13: SELECTORS AND CASCADE ==========
+   TEACH: Compare descendant, child, adjacent sibling and general sibling selectors. Inspect a deliberately scoped !important. */
+.selector-demo {
+  color: #174f7e;
+}
+
+.selector-demo p {
+  padding: 0.5rem;
+}
+
+.selector-demo > p {
+  border-left: 2px solid currentColor;
+}
+
+.notice + p {
+  background: #edf4fa;
+}
+
+.notice ~ p {
+  font-style: italic;
+}
+
+[data-kind] {
+  border-radius: 3px;
+}
+
+[data-kind='travel-tip'] {
+  font-weight: bold;
+}
+
+[data-kind^='travel'] {
+  letter-spacing: 0.02em;
+}
+
+[data-kind$='tip'] {
+  text-decoration: underline;
+}
+
+[data-kind*='vel'] {
+  padding-right: 1rem;
+}
+
+[data-label~='guide'] {
+  text-decoration-style: dotted;
+}
+
+[data-kind|='travel'] {
+  border-top: 1px solid currentColor;
+}
+
+#cascade-example {
+  color: #174f7e;
+}
+
+.selector-demo .notice {
+  color: #a93917 !important;
+}
+
+/* Demonstration only: avoid routine !important use. */
+.selector-demo a {
+  color: inherit;
+}
+
+.selector-demo p::first-letter {
+  font-size: 1.4em;
+}
+
+.selector-demo p::selection {
+  background: #ffe7c6;
+}
+
+/* ========== C14: DISPLAY, POSITION AND OVERFLOW ==========
+   TEACH: Compare none with hidden, inline-block with block, and absolute positioning relative to a parent. */
+.position-demo {
+  position: relative;
+  padding: 3rem 1rem 1rem;
+  border: 1px solid #ccd8e2;
+}
+
+.position-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  background: #edf4fa;
+  padding: 0.3rem;
+}
+
+.inline-demo {
+  display: inline-block;
+  width: 120px;
+  vertical-align: middle;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.removed {
+  display: none;
+}
+
+.overflow-demo {
+  height: 90px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #174f7e;
+  margin-top: 1rem;
+}
+
+/* ========== C15: FLOAT AND CLEAR ==========
+   TEACH: Float is useful for wrapping text around an image; use Flexbox or Grid for most page layouts. */
+.float-demo img {
+  float: left;
+  width: 130px;
+  margin: 0 1rem 1rem 0;
+}
+
+.float-demo::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.clear-demo {
+  clear: both;
+}
+
+/* ========== C16: GRADIENTS, BORDERS AND SHADOWS ==========
+   TEACH: Gradients are generated CSS images; border-image can use a gradient or an image. */
+.effects-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.effects-row > div {
+  width: 160px;
+  height: 100px;
+  padding: 1rem;
+  color: #102d49;
+  border-radius: 10px;
+  box-shadow: 3px 4px 10px #0002;
+}
+
+.linear {
+  background: linear-gradient(90deg, #e5efff, #f8dbb9);
+}
+
+.radial {
+  background: radial-gradient(circle, #fff, #9dbbdb);
+}
+
+.conic {
+  background: conic-gradient(#cddff4, #f8dbb9, #cddff4);
+}
+
+.border-image {
+  border: 10px solid transparent;
+  border-image: linear-gradient(90deg, #174f7e, #bd481e) 1;
+  padding: 1rem;
+}
+
+/* ========== C17: TRANSFORMS, TRANSITIONS AND ANIMATION ==========
+   TEACH: Hover or focus the tile. Transform changes appearance without reflow. Reduced-motion preferences disable motion. */
+.transform-tile {
+  width: 190px;
+  padding: 2rem;
+  background: #edf4fa;
+  transform: translate(5px, 0) rotate(-2deg);
+  transition: transform 0.4s ease-in-out 0.1s;
+}
+
+.transform-tile:hover, .transform-tile:focus {
+  transform: scale(1.05) skew(3deg, 0deg);
+}
+
+.motion-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #bd481e;
+  margin-top: 2rem;
+  animation: travel 2s ease-in-out 0s 2 alternate both;
+}
+
+@keyframes travel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(120px);
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-dot {
+    animation: none;
+  }
+
+  .transform-tile {
+    transition: none;
+  }
+
+}
+
+/* ========== C18: TOOLTIP AND DROPDOWN ==========
+   TEACH: Hover and focus-within reveal the tooltip. Native details provides an accessible click/touch dropdown. */
+.tooltip-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 115%;
+  left: 0;
+  width: 210px;
+  background: #102d49;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  border: 6px solid transparent;
+  border-top-color: #102d49;
+}
+
+.tooltip-wrap:hover .tooltip, .tooltip-wrap:focus-within .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown {
+  margin-top: 1rem;
+  max-width: 260px;
+  border: 1px solid #ccd8e2;
+  padding: 1rem;
+}
+
+.dropdown ul {
+  padding-left: 1.2rem;
+}
+
+/* ========== C19: IMAGE SHAPES, MASKS AND SPRITES ==========
+   TEACH: The same placeholder is cropped, filtered and masked. A sprite shows different areas of one background image. */
+.effects-row img {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  object-position: 60% 50%;
+}
+
+.overlay-photo {
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.overlay-photo span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  background: #102d49;
+  opacity: 0;
+}
+
+.overlay-photo:hover span {
+  opacity: 1;
+}
+
+.circle-photo {
+  clip-path: circle(45%);
+  filter: sepia(80%);
+}
+
+.masked-photo {
+  mask-image: linear-gradient(black, transparent);
+}
+
+.sprite {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url('../assets/placeholder.png');
+  background-size: 160px 80px;
+}
+
+.sprite-left {
+  background-position: 0 0;
+}
+
+.sprite-right {
+  background-position: -80px 0;
+}
+
+/* ========== C20: VARIABLES, MATH AND FEATURE QUERIES ==========
+   TEACH: Custom properties reuse values; var provides a fallback. Math sets fluid sizes. @supports enables an enhancement. */
+@property --panel-accent {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #174f7e;
+}
+
+.variable-demo {
+  --space: 1rem;
+  --panel-accent: #174f7e;
+  padding: var(--space, 16px);
+  border: 3px solid var(--panel-accent);
+  width: min(100%, 600px);
+  min-height: max(80px, 5rem);
+}
+
+.variable-demo p {
+  width: calc(100% - 1rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+@supports (border-radius: 12px) {
+  .variable-demo {
+    border-radius: 12px;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .variable-demo {
+    --space: 0.75rem;
+  }
+
+}
+
+.nested-counter, .nested-counter div {
+  counter-reset: part;
+}
+
+.nested-counter div::before {
+  counter-increment: part;
+  content: counters(part, '.') ' ';
+}
+
+.nested-counter div {
+  margin-left: 1rem;
+}
+
+/* ========== C21: CUSTOM FONT AND ERROR INSPECTION ==========
+   TEACH: A local font face tries an installed Arial font. Use DevTools to find the intentionally invalid value in this isolated rule. */
+@font-face {
+  font-family: 'Classroom Local';
+  src: local('Arial');
+}
+
+.custom-font {
+  font-family: 'Classroom Local', Arial, sans-serif;
+}
+
+.error-demo {
+  color: not-a-color;
+}
+
+/* Intentional lesson error; browser ignores only this declaration. */
+.resize-demo {
+  resize: both;
+  overflow: auto;
+  width: 260px;
+  max-width: 100%;
+  min-height: 90px;
+  border: 1px solid #7890a5;
+  padding: 1rem;
+}
+
+/* ========== C90: RESPONSIVE LAYOUT ==========
+   This rule applies only at 700px or narrower. Source order matters. */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .header-row {
+    align-items: flex-start;
+  }
+
+  nav ul {
+    gap: 0.8rem;
+  }
+
+}
+
+/* ========== C91: PRINT ==========
+   Print removes navigation and dark backgrounds to save ink. */
+@media print {
+  .site-header, .site-footer, .skip-link, button {
+    display: none;
+  }
+
+  body {
+    color: black;
+    background: white;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  a {
+    color: black;
+  }
+
+}
+
+/* ========== C22: SMALL PROPERTY COMPARISONS ==========
+   These supplement the earlier examples; each selector matches an existing element. */
+.transform-tile:active {
+  transform: matrix(1, 0.1, 0, 1, 0, 0);
+}
+
+.circle-photo {
+  margin-inline: auto;
+}
+
+.float-demo img {
+  shape-outside: circle(50%);
+  border-radius: 50%;
+}
+
+.selector-demo p::first-line {
+  letter-spacing: 0.025em;
+}
+
+.selector-demo a:visited {
+  color: #663399;
+}
+
+.selector-demo a:active {
+  color: #a93917;
+}
+
+/* ========== C23: IMAGE MASK SOURCES ========== */
+.png-mask, .svg-mask {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.png-mask {
+  mask-image: url('../assets/placeholder.png');
+  mask-mode: luminance;
+  mask-size: 100% 100%;
+}
+
+.svg-mask {
+  mask-image: url('../assets/mask.svg');
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}

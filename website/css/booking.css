@@ -1,0 +1,326 @@
+/* ========== C01: PAGE DEFAULTS ==========
+   The universal selector includes padding and borders in declared widths.
+   Body typography is inherited. rem is relative to the root font size. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: #172b42;
+  background: #fff;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.04em;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  max-width: 65ch;
+}
+
+a {
+  color: #155a9c;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: #943617;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, summary {
+  cursor: pointer;
+}
+
+/* ========== C02: SHARED PAGE SHELL (COPIED FOR INDEPENDENCE) ==========
+   .container centers content with auto margins. Flexbox arranges navigation.
+   This block is deliberately repeated in each page CSS: no hidden imports. */
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 1px solid #dbe3eb;
+  background: white;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #172b42;
+}
+
+.brand ion-icon {
+  color: #c04e28;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a[aria-current='page'] {
+  color: #a93917;
+  border-bottom: 2px solid currentColor;
+}
+
+main {
+  min-height: 65vh;
+}
+
+section {
+  padding: 2.5rem 0;
+}
+
+.page-heading {
+  padding: 3.5rem 0 1rem;
+}
+
+.eyebrow {
+  color: #a93917;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #42586e;
+}
+
+.site-footer {
+  background: #102d49;
+  color: white;
+  padding: 2.5rem 0;
+  margin-top: 3rem;
+}
+
+.site-footer a {
+  color: #d7e9fa;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ========== C03: BASIC REUSABLE ELEMENTS ==========
+   A class can style many elements. Padding is inside; margin is outside.
+   Use a link for navigation and a button for an action. */
+.button, button {
+  display: inline-block;
+  background: #174f7e;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #174f7e;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button:hover, button:hover {
+  background: #113b60;
+  color: white;
+}
+
+.secondary {
+  color: #174f7e;
+  background: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  border: 1px solid #dbe3eb;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.note {
+  background: #eef5fa;
+  border-left: 4px solid #276493;
+  padding: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  background: #edf3f8;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+
+/* ========== C04: KEYBOARD ACCESS ==========
+   :focus-visible makes keyboard focus clear. The skip link appears on focus. */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+  outline: 3px solid #bd481e;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  background: white;
+  padding: 0.8rem;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ========== C05: FORM CONTROLS ==========
+   Attribute selectors target input types. Labels remain visible above fields. */
+form {
+  max-width: 720px;
+}
+
+fieldset {
+  border: 1px solid #c5d3df;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input:not([type='checkbox']):not([type='radio']):not([type='hidden']), select, textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #7890a5;
+  border-radius: 4px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input:required {
+  border-left: 3px solid #174f7e;
+}
+
+input:disabled {
+  background: #e9edf0;
+}
+
+form button {
+  margin-top: 1rem;
+}
+
+/* ========== C90: RESPONSIVE LAYOUT ==========
+   This rule applies only at 700px or narrower. Source order matters. */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .header-row {
+    align-items: flex-start;
+  }
+
+  nav ul {
+    gap: 0.8rem;
+  }
+
+}
+
+/* ========== C91: PRINT ==========
+   Print removes navigation and dark backgrounds to save ink. */
+@media print {
+  .site-header, .site-footer, .skip-link, button {
+    display: none;
+  }
+
+  body {
+    color: black;
+    background: white;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  a {
+    color: black;
+  }
+
+}

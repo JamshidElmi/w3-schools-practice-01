@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ========== H01: DOCUMENT AND HEAD ==========
+         TEACH: doctype selects modern HTML; lang identifies language.
+         charset enables Unicode, viewport supports mobile layouts, and title names the browser tab.
+         The stylesheet link loads this page's separate CSS. Google Fonts needs internet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Local sample media for the classroom. Replace these samples with your own travel footage.">
+    <title>See it. Hear it. Imagine it. | Discover Toronto</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/media.css">
+  </head>
+  <body>
+    <!-- ========== H02: HEADER AND NAVIGATION ==========
+       TEACH: semantic header/nav, relative links, lists, reusable classes.
+       Ionicons are decorative here; visible link text supplies the name. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <ion-icon name="compass-outline" aria-hidden="true"></ion-icon> Discover Toronto<span aria-hidden="true">.</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="attractions.html">Explore</a>
+            </li>
+            <li>
+              <a href="events.html">Events</a>
+            </li>
+            <li>
+              <a href="planner.html">Plan a trip</a>
+            </li>
+            <li>
+              <a href="booking.html">Book a visit</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ========== H03: MAIN CONTENT ==========
+       TEACH: one main landmark and one descriptive h1; heading order matters. -->
+    <main class="container" id="main">
+      <div class="page-heading">
+        <p class="eyebrow">A little curiosity. A whole city.</p>
+        <h1>See it. Hear it. Imagine it.</h1>
+        <p class="lead">Local sample media for the classroom. Replace these samples with your own travel footage.</p>
+      </div>
+      <!-- ========== H04: VIDEO ==========
+         TEACH: controls displays browser controls; source declares format, poster is shown before playback, track adds captions. -->
+      <section id="h04">
+        <video controls preload="metadata" poster="assets/placeholder.png" width="960" height="640">
+          <source src="assets/sample-video.mp4" type="video/mp4">
+            <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>Your browser cannot play this video.</track>
+          </source>
+        </video>
+        <p>Transcript: A silent placeholder image is displayed for five seconds.</p>
+      </section>
+      <!-- ========== H05: AUDIO ==========
+         TEACH: audio is for sound; avoid autoplay. A transcript makes audio information available as text. -->
+      <section id="h05">
+        <audio controls preload="metadata">
+          <source src="assets/sample-tone.wav" type="audio/wav">Your browser cannot play this audio.</source>
+        </audio>
+        <p>Transcript: A quiet two-second demonstration tone. No speech.</p>
+      </section>
+      <!-- ========== H06: EMBEDDED MEDIA ==========
+         TEACH: iframe can embed a local page or a remote service. Remote YouTube needs internet and may be blocked. -->
+      <section id="h06">
+        <iframe title="Local location card" src="map.html" loading="lazy"></iframe>
+        <details>
+          <summary>YouTube embed (requires internet)</summary>
+          <iframe title="YouTube HTML video example" src="https://www.youtube-nocookie.com/embed/tgbNymZ7vqY" loading="lazy" allowfullscreen></iframe>
+          <p>External demonstration video, not Toronto travel footage.</p>
+        </details>
+      </section>
+      <!-- ========== H07: OBJECT AND EMBED ==========
+         TEACH: Modern object/embed can load supported documents. Flash and Java browser plug-ins are obsolete; do not install them. -->
+      <section id="h07">
+        <object data="assets/placeholder.png" type="image/png" width="320" height="214">
+          <p>Placeholder could not load.</p>
+        </object>
+        <embed src="assets/placeholder.png" type="image/png" width="320" height="214" title="Embedded placeholder image">
+    </embed>
+      </section>
+    </main>
+    <!-- ========== H90: FOOTER ==========
+       TEACH: footer, entity for copyright, descriptive navigation links. -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <strong>Discover Toronto.</strong> Your next story starts here.</p>
+        <div class="footer-links">
+          <a href="attraction.html">Attraction details</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="media.html">Media centre</a>
+          <a href="guide.html">City guide</a>
+          <a href="contact.html">Contact</a>
+          <a href="lab.html">Learning lab</a>
+          <a href="teacher-guide.html">Teacher guide</a>
+        </div>
+        <p>
+          <small>© 2026 Discover Toronto. Classroom demo. All events, prices and contact details are fictional.</small>
+        </p>
+      </div>
+    </footer>
+    <!-- ========== H91: EXTERNAL ICON LIBRARY ==========
+       TEACH LATER: Ionicons uses JavaScript web components; it is not an HTML tag built into browsers.
+       Internet is needed for icons and Google Fonts. Text and fallback fonts still work offline. -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

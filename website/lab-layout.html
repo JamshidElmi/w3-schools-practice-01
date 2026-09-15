@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ========== H01: DOCUMENT AND HEAD ==========
+         TEACH: doctype selects modern HTML; lang identifies language.
+         charset enables Unicode, viewport supports mobile layouts, and title names the browser tab.
+         The stylesheet link loads this page's separate CSS. Google Fonts needs internet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flexbox, Grid and a few deliberately advanced layout experiments.">
+    <title>Room for every idea. | Discover Toronto</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/lab-layout.css">
+  </head>
+  <body>
+    <!-- ========== H02: HEADER AND NAVIGATION ==========
+       TEACH: semantic header/nav, relative links, lists, reusable classes.
+       Ionicons are decorative here; visible link text supplies the name. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <ion-icon name="compass-outline" aria-hidden="true"></ion-icon> Discover Toronto<span aria-hidden="true">.</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="attractions.html">Explore</a>
+            </li>
+            <li>
+              <a href="events.html">Events</a>
+            </li>
+            <li>
+              <a href="planner.html">Plan a trip</a>
+            </li>
+            <li>
+              <a href="booking.html">Book a visit</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ========== H03: MAIN CONTENT ==========
+       TEACH: one main landmark and one descriptive h1; heading order matters. -->
+    <main class="container" id="main">
+      <div class="page-heading">
+        <p class="eyebrow">A little curiosity. A whole city.</p>
+        <h1>Room for every idea.</h1>
+        <p class="lead">Flexbox, Grid and a few deliberately advanced layout experiments.</p>
+      </div>
+      <!-- ========== L30: FLEX CONTAINER AND ITEMS ==========
+         TEACH: Main-axis alignment uses justify-content; cross-axis alignment uses align-items. Flex items can grow, shrink and set a basis. -->
+      <section id="l30">
+        <h2>Flex container and items</h2>
+        <p>Main-axis alignment uses justify-content; cross-axis alignment uses align-items. Flex items can grow, shrink and set a basis.</p>
+        <div class="flex-demo">
+          <div>Walk</div>
+          <div>Lunch</div>
+          <div>Gallery</div>
+        </div>
+      </section>
+      <!-- ========== L31: GRID TRACKS, ITEMS AND NAMED AREAS ==========
+         TEACH: Grid uses rows and columns. Named areas place content; gap separates tracks. Preserve reading order when changing visual order. -->
+      <section id="l31">
+        <h2>Grid tracks, items and named areas</h2>
+        <p>Grid uses rows and columns. Named areas place content; gap separates tracks. Preserve reading order when changing visual order.</p>
+        <div class="grid-demo">
+          <div class="grid-title">Trip overview</div>
+          <div class="grid-menu">Morning</div>
+          <div class="grid-content">Waterfront and gardens</div>
+          <div class="grid-foot">Leave time for a break</div>
+        </div>
+        <div class="twelve-grid">
+          <span>4 columns</span>
+          <span>8 columns</span>
+        </div>
+      </section>
+      <!-- ========== L32: 3D TRANSFORMS ==========
+         TEACH: Perspective controls depth. A checkbox triggers the flip without hover. The cube and carousel are static geometry demonstrations. -->
+      <section id="l32">
+        <h2>3D transforms</h2>
+        <p>Perspective controls depth. A checkbox triggers the flip without hover. The cube and carousel are static geometry demonstrations.</p>
+        <label>
+          <input type="checkbox" id="flip-toggle"> Flip the travel card</label>
+        <div class="flip-stage">
+          <div class="flip-card">
+            <div class="front">Waterfront</div>
+            <div class="back">Allow two hours.</div>
+          </div>
+        </div>
+        <div class="cube-stage">
+          <div class="cube">
+            <span class="cube-front">Front</span>
+            <span class="cube-back">Back</span>
+            <span class="cube-left">Left</span>
+            <span class="cube-right">Right</span>
+            <span class="cube-top">Top</span>
+            <span class="cube-bottom">Bottom</span>
+          </div>
+        </div>
+        <div class="carousel-stage">
+          <div class="carousel">
+            <span>Walk</span>
+            <span>Art</span>
+            <span>Park</span>
+          </div>
+        </div>
+      </section>
+      <!-- ========== L33: VERTICAL NAVIGATION, STICKY AND PAGINATION ==========
+         TEACH: Sticky stays within its scrolling container. Pagination links navigate to real separate pages. -->
+      <section id="l33">
+        <h2>Vertical navigation, sticky and pagination</h2>
+        <p>Sticky stays within its scrolling container. Pagination links navigate to real separate pages.</p>
+        <div class="sticky-demo">
+          <nav class="vertical-nav" aria-label="Lab navigation">
+            <a href="lab.html">HTML lab</a>
+            <a href="lab-css.html">CSS lab</a>
+            <a href="lab-forms.html">Forms lab</a>
+          </nav>
+          <p>Scroll inside this box to see the navigation stay near its top.</p>
+          <p class="tall-demo">More sample content below.</p>
+        </div>
+        <nav class="pagination" aria-label="Lab chapters">
+          <a href="lab.html">1</a>
+          <a href="lab-css.html">2</a>
+          <a href="lab-layout.html" aria-current="page">3</a>
+        </nav>
+        <a class="fixed-help" href="teacher-guide.html">Teacher guide</a>
+      </section>
+      <!-- ========== L34: RESPONSIVE FLOAT GRID AND FRAMEWORK COMPARISON ==========
+         TEACH: A percentage float grid demonstrates older responsive layouts. Frameworks provide premade classes; this project stays plain CSS. -->
+      <section id="l34">
+        <h2>Responsive float grid and framework comparison</h2>
+        <p>A percentage float grid demonstrates older responsive layouts. Frameworks provide premade classes; this project stays plain CSS.</p>
+        <div class="float-grid">
+          <div>One third</div>
+          <div>Two thirds</div>
+        </div>
+        <p>Compare this hand-written layout with the framework and template chapters in the teacher checklist. No framework is required or loaded.</p>
+      </section>
+      <!-- ========== L35: GRID ORDER ==========
+         TEACH: visual order differs from DOM order; these labels are deliberately not interactive. -->
+      <section id="l35">
+        <h2>Visual order versus source order</h2>
+        <div class="order-demo">
+          <span>First in the HTML</span>
+          <span>Second in the HTML</span>
+        </div>
+      </section>
+    </main>
+    <!-- ========== H90: FOOTER ==========
+       TEACH: footer, entity for copyright, descriptive navigation links. -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <strong>Discover Toronto.</strong> Your next story starts here.</p>
+        <div class="footer-links">
+          <a href="attraction.html">Attraction details</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="media.html">Media centre</a>
+          <a href="guide.html">City guide</a>
+          <a href="contact.html">Contact</a>
+          <a href="lab.html">Learning lab</a>
+          <a href="teacher-guide.html">Teacher guide</a>
+        </div>
+        <p>
+          <small>© 2026 Discover Toronto. Classroom demo. All events, prices and contact details are fictional.</small>
+        </p>
+      </div>
+    </footer>
+    <!-- ========== H91: EXTERNAL ICON LIBRARY ==========
+       TEACH LATER: Ionicons uses JavaScript web components; it is not an HTML tag built into browsers.
+       Internet is needed for icons and Google Fonts. Text and fallback fonts still work offline. -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

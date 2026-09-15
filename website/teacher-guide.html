@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ========== H01: DOCUMENT AND HEAD ==========
+         TEACH: doctype selects modern HTML; lang identifies language.
+         charset enables Unicode, viewport supports mobile layouts, and title names the browser tab.
+         The stylesheet link loads this page's separate CSS. Google Fonts needs internet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A practical route from a blank HTML file to a complete multi-page website.">
+    <title>Teach one visible idea at a time. | Discover Toronto</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/teacher-guide.css">
+  </head>
+  <body>
+    <!-- ========== H02: HEADER AND NAVIGATION ==========
+       TEACH: semantic header/nav, relative links, lists, reusable classes.
+       Ionicons are decorative here; visible link text supplies the name. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <ion-icon name="compass-outline" aria-hidden="true"></ion-icon> Discover Toronto<span aria-hidden="true">.</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="attractions.html">Explore</a>
+            </li>
+            <li>
+              <a href="events.html">Events</a>
+            </li>
+            <li>
+              <a href="planner.html">Plan a trip</a>
+            </li>
+            <li>
+              <a href="booking.html">Book a visit</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ========== H03: MAIN CONTENT ==========
+       TEACH: one main landmark and one descriptive h1; heading order matters. -->
+    <main class="container" id="main">
+      <div class="page-heading">
+        <p class="eyebrow">A little curiosity. A whole city.</p>
+        <h1>Teach one visible idea at a time.</h1>
+        <p class="lead">A practical route from a blank HTML file to a complete multi-page website.</p>
+      </div>
+      <div class="note">
+        <strong>Start with lesson 01.</strong> Build in an empty student-work folder; use this finished site as your reference answer. <a href="chapter-map.html">Open the chapter checklist</a>.</div>
+      <!-- ========== T01: START WITH AN EMPTY FILE ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t01">
+        <h2>01. Start with an empty file</h2>
+        <p>
+          <strong>Open:</strong> index.html · H01–H03; css/index.css · C01</p>
+        <p>
+          <strong>Explain:</strong> HTML is a tree of elements. The doctype selects modern parsing. head contains metadata; body contains visible content. title is the browser tab label, while h1 is the page heading. lang and charset serve different purposes.</p>
+        <p>
+          <strong>Demonstrate:</strong> Create a new student folder and type the document skeleton, heading and paragraph. Do not copy the completed page. Add the stylesheet link only after the student sees the unstyled document.</p>
+        <p>
+          <strong>Student task:</strong> Change the title and h1 independently. Add a second paragraph.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student identifies an opening tag, closing tag, element, attribute and text node.</p>
+        <p>
+          <strong>Watch for:</strong> Saving as index.html.txt; putting visible content in head.</p>
+      </section>
+      <!-- ========== T02: LINKS, FOLDERS AND NAVIGATION ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t02">
+        <h2>02. Links, folders and navigation</h2>
+        <p>
+          <strong>Open:</strong> index.html · H02, H90; css/index.css · C02</p>
+        <p>
+          <strong>Explain:</strong> Relative paths are resolved from the current file. A nav contains a list of links. A class is reusable; an id is unique. aria-current identifies the current page. The skip link targets main.</p>
+        <p>
+          <strong>Demonstrate:</strong> Create attractions.html with a heading and link back. Make the navigation work before styling it.</p>
+        <p>
+          <strong>Student task:</strong> Add a link to contact.html and return to Home.</p>
+        <p>
+          <strong>Checkpoint:</strong> Every link reaches the intended local file; Tab reaches the skip link.</p>
+        <p>
+          <strong>Watch for:</strong> Using a Windows disk path in href; using # as an unfinished destination.</p>
+      </section>
+      <!-- ========== T03: IMAGES AND THE HERO ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t03">
+        <h2>03. Images and the hero</h2>
+        <p>
+          <strong>Open:</strong> index.html · H04; css/index.css · C05</p>
+        <p>
+          <strong>Explain:</strong> src locates the image, alt supplies a text alternative, dimensions reserve space. figure and figcaption relate media to its caption. Decorative images need empty alt; this placeholder has a descriptive alt.</p>
+        <p>
+          <strong>Demonstrate:</strong> Use assets/placeholder.png. Temporarily change src to a missing filename and observe the fallback. Restore it.</p>
+        <p>
+          <strong>Student task:</strong> Replace one image copy with a real photograph later and update alt and dimensions.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student explains why alt should describe the actual image, not say image of.</p>
+        <p>
+          <strong>Watch for:</strong> Using an image as text; forgetting the path from CSS starts inside css/.</p>
+      </section>
+      <!-- ========== T04: YOUR FIRST CSS RULES ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t04">
+        <h2>04. Your first CSS rules</h2>
+        <p>
+          <strong>Open:</strong> css/index.css · C01–C03</p>
+        <p>
+          <strong>Explain:</strong> A rule has a selector and declarations. Each declaration has a property and value. A semicolon separates declarations. Element selectors match tags; .class selectors match class attributes. Some properties inherit.</p>
+        <p>
+          <strong>Demonstrate:</strong> Change body colour, then heading font-size. Use DevTools to disable one rule.</p>
+        <p>
+          <strong>Student task:</strong> Give one featured card a new class and a different border.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student points to the selector, property and value without help.</p>
+        <p>
+          <strong>Watch for:</strong> Writing HTML attributes inside a CSS rule; missing braces.</p>
+      </section>
+      <!-- ========== T05: SPACING AND THE BOX MODEL ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t05">
+        <h2>05. Spacing and the box model</h2>
+        <p>
+          <strong>Open:</strong> lab-css.html · L11; css/lab-css.css · C11; css/index.css · C03</p>
+        <p>
+          <strong>Explain:</strong> Content, padding, border and margin form the box. border-box includes padding and border in declared width. Outline is outside the box and does not reserve layout space. Adjacent vertical margins can collapse.</p>
+        <p>
+          <strong>Demonstrate:</strong> Inspect the box-model panel and compare 20px padding with 20px margin. Toggle box-sizing on the example.</p>
+        <p>
+          <strong>Student task:</strong> Give the CTA more inside space while keeping the same outside gap.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student predicts the total width before and after changing box-sizing.</p>
+        <p>
+          <strong>Watch for:</strong> Using repeated br tags for space; expecting outline to affect width.</p>
+      </section>
+      <!-- ========== T06: READABLE TYPE, COLOUR AND ICONS ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t06">
+        <h2>06. Readable type, colour and icons</h2>
+        <p>
+          <strong>Open:</strong> index.html · H01, H91; lab-css.html · L10, L12</p>
+        <p>
+          <strong>Explain:</strong> Google Fonts loads DM Sans from another service; Arial and sans-serif are fallbacks. rem follows root size, em follows the relevant font size, and px is a CSS pixel. Ionicons is a web component library. Icons beside text are decorative.</p>
+        <p>
+          <strong>Demonstrate:</strong> Disable the font request to observe fallback. Change line-height and compare a paragraph. Explain colour contrast.</p>
+        <p>
+          <strong>Student task:</strong> Add a decorative Ionicon beside a heading without replacing its words.</p>
+        <p>
+          <strong>Checkpoint:</strong> The page still makes sense when icons and fonts are unavailable.</p>
+        <p>
+          <strong>Watch for:</strong> Removing visible labels; relying only on colour; assuming a CDN works offline.</p>
+      </section>
+      <!-- ========== T07: SEMANTICS AND RICH CONTENT ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t07">
+        <h2>07. Semantics and rich content</h2>
+        <p>
+          <strong>Open:</strong> attraction.html · H04–H05; lab.html · H05</p>
+        <p>
+          <strong>Explain:</strong> Choose elements for meaning: strong and em express importance/emphasis; b and i have other semantic uses. blockquote is a block quotation; q is inline. ul, ol and dl represent different relationships. article can stand alone; aside supplements it.</p>
+        <p>
+          <strong>Demonstrate:</strong> Mark up a short waterfront article, then add a packing list and an itinerary.</p>
+        <p>
+          <strong>Student task:</strong> Add one abbreviation with a title and a short quotation with attribution.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student chooses an ordered list only when order matters.</p>
+        <p>
+          <strong>Watch for:</strong> Using headings for bigger text; choosing every element only for its default appearance.</p>
+      </section>
+      <!-- ========== T08: FLEXBOX BEFORE GRID ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t08">
+        <h2>08. Flexbox before Grid</h2>
+        <p>
+          <strong>Open:</strong> index.html · H04; css/index.css · C05; lab-layout.html · L30</p>
+        <p>
+          <strong>Explain:</strong> Flexbox lays out children along a main axis. gap separates children. flex-wrap allows a new row. flex-basis is a starting size; grow and shrink control available space.</p>
+        <p>
+          <strong>Demonstrate:</strong> Resize the hero. Then change flex-direction in the lab and ask which axis justify-content now affects.</p>
+        <p>
+          <strong>Student task:</strong> Make a two-part hero with readable text and an image.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student identifies the flex container and its direct flex items.</p>
+        <p>
+          <strong>Watch for:</strong> Applying flex to the children instead of their parent; fixed widths that overflow.</p>
+      </section>
+      <!-- ========== T09: CARDS AND GRID ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t09">
+        <h2>09. Cards and Grid</h2>
+        <p>
+          <strong>Open:</strong> attractions.html · H04; css/attractions.css · C03; lab-layout.html · L31</p>
+        <p>
+          <strong>Explain:</strong> Grid defines tracks in rows and columns. repeat(3, 1fr) makes three equal tracks. A gap is not padding. Named areas help describe larger layouts.</p>
+        <p>
+          <strong>Demonstrate:</strong> Build one complete card, then duplicate it with different content.</p>
+        <p>
+          <strong>Student task:</strong> Add a fourth card and predict its row.</p>
+        <p>
+          <strong>Checkpoint:</strong> Cards wrap by grid placement; heading levels remain logical.</p>
+        <p>
+          <strong>Watch for:</strong> Copying duplicate ids; using visual order to repair wrong HTML reading order.</p>
+      </section>
+      <!-- ========== T10: RESPONSIVE DESIGN ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t10">
+        <h2>10. Responsive design</h2>
+        <p>
+          <strong>Open:</strong> index.html · H01; css/index.css · C90; gallery.html · H04</p>
+        <p>
+          <strong>Explain:</strong> The viewport meta tag enables useful mobile sizing. A media query condition changes selected rules. Fluid images use max-width and auto height. picture chooses sources, while object-fit controls cropping.</p>
+        <p>
+          <strong>Demonstrate:</strong> Compare widths above and below 700px, then 200% zoom.</p>
+        <p>
+          <strong>Student task:</strong> Change the card breakpoint and describe the before/after layout.</p>
+        <p>
+          <strong>Checkpoint:</strong> No page-wide sideways scroll; all text and controls remain readable.</p>
+        <p>
+          <strong>Watch for:</strong> Making a second mobile HTML page; setting width without accounting for padding.</p>
+      </section>
+      <!-- ========== T11: TABLES FOR DATA ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t11">
+        <h2>11. Tables for data</h2>
+        <p>
+          <strong>Open:</strong> events.html · H05; css/events.css · C05</p>
+        <p>
+          <strong>Explain:</strong> caption describes the table. th and scope identify headers. thead and tbody group rows. colspan merges columns; rowspan merges rows. colgroup styles whole columns.</p>
+        <p>
+          <strong>Demonstrate:</strong> Build the simplest two-column table first; add headers and the merged schedule cells after.</p>
+        <p>
+          <strong>Student task:</strong> Add a Friday row with a time and activity.</p>
+        <p>
+          <strong>Checkpoint:</strong> Each row has a consistent logical column count, including spans.</p>
+        <p>
+          <strong>Watch for:</strong> Using a table for page layout; forgetting merged cells when counting columns.</p>
+      </section>
+      <!-- ========== T12: FORMS FROM THE INSIDE OUT ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t12">
+        <h2>12. Forms from the inside out</h2>
+        <p>
+          <strong>Open:</strong> booking.html · H04; css/booking.css · C05</p>
+        <p>
+          <strong>Explain:</strong> label for matches id; name is the submitted key. fieldset and legend group related inputs. required is browser validation, not security. GET serializes values into the URL. A real service needs backend validation.</p>
+        <p>
+          <strong>Demonstrate:</strong> Submit empty fields, then use fictional values and inspect the resulting query string.</p>
+        <p>
+          <strong>Student task:</strong> Add a required select with meaningful choices.</p>
+        <p>
+          <strong>Checkpoint:</strong> Clicking a label focuses its control; invalid fields block ordinary submission.</p>
+        <p>
+          <strong>Watch for:</strong> Placeholder-only labels; omitting name; putting passwords or real personal data in a GET form.</p>
+      </section>
+      <!-- ========== T13: FORM TYPES AND ATTRIBUTES ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t13">
+        <h2>13. Form types and attributes</h2>
+        <p>
+          <strong>Open:</strong> lab-forms.html · H04–H05; js/forms.js · J01</p>
+        <p>
+          <strong>Explain:</strong> Explore every input type in small groups. readonly values submit; disabled values do not. hidden is visible in source. The form attribute links outside controls. Uploads need multipart/form-data and a server.</p>
+        <p>
+          <strong>Demonstrate:</strong> Compare radio grouping with independent checkboxes; change min, max and step. Use the output calculation after explaining the JavaScript dependency.</p>
+        <p>
+          <strong>Student task:</strong> Create a date, number and colour input with labels.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student explains why changing type changes both UI and validation.</p>
+        <p>
+          <strong>Watch for:</strong> Expecting identical date widgets in every browser; treating a file chooser as a completed upload.</p>
+      </section>
+      <!-- ========== T14: GALLERY AND EMBEDDED DOCUMENTS ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t14">
+        <h2>14. Gallery and embedded documents</h2>
+        <p>
+          <strong>Open:</strong> gallery.html · H04–H05; contact.html · H06; map.html · H04</p>
+        <p>
+          <strong>Explain:</strong> A figure is not just a styled div. Lazy loading delays offscreen images. An iframe loads an independent document; it needs a title. A native dialog handles modal focus and Escape after JavaScript opens it.</p>
+        <p>
+          <strong>Demonstrate:</strong> Open and close the large gallery image using keyboard controls. Inspect the iframe source.</p>
+        <p>
+          <strong>Student task:</strong> Create another local information page and embed it with a descriptive title.</p>
+        <p>
+          <strong>Checkpoint:</strong> The student distinguishes a link, an image and an iframe.</p>
+        <p>
+          <strong>Watch for:</strong> Using an iframe for a normal link; assuming cross-origin iframe contents can be freely styled.</p>
+      </section>
+      <!-- ========== T15: AUDIO, VIDEO AND GRAPHICS ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t15">
+        <h2>15. Audio, video and graphics</h2>
+        <p>
+          <strong>Open:</strong> media.html · H04–H07; lab.html · H06–H07</p>
+        <p>
+          <strong>Explain:</strong> Media source type declares format. Controls provide native playback. Captions and transcripts make information accessible. SVG is vector markup; canvas needs script to paint pixels. Image-map coordinates depend on rendered size.</p>
+        <p>
+          <strong>Demonstrate:</strong> Play the bundled silent video and tone. Show the captions, SVG route and canvas data text.</p>
+        <p>
+          <strong>Student task:</strong> Change the SVG stroke colour and a canvas bar height.</p>
+        <p>
+          <strong>Checkpoint:</strong> Media sources load; the student can explain SVG versus canvas.</p>
+        <p>
+          <strong>Watch for:</strong> Autoplaying sound; treating a poster image as a playable video; installing obsolete plug-ins.</p>
+      </section>
+      <!-- ========== T16: SELECTORS AND THE CASCADE ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t16">
+        <h2>16. Selectors and the cascade</h2>
+        <p>
+          <strong>Open:</strong> lab-css.html · L13, L22; css/lab-css.css · C13, C22</p>
+        <p>
+          <strong>Explain:</strong> Specificity, importance and source order resolve competing declarations. Descendant and child selectors are different. Pseudo-classes select states; pseudo-elements target generated portions. Inline and internal styles are comparison examples only.</p>
+        <p>
+          <strong>Demonstrate:</strong> Inspect the scoped !important example and remove the important flag. Observe which colour wins.</p>
+        <p>
+          <strong>Student task:</strong> Write one child selector, one adjacent sibling selector and one focus rule.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student explains the winning declaration using DevTools evidence.</p>
+        <p>
+          <strong>Watch for:</strong> Solving every conflict with !important; removing focus outlines.</p>
+      </section>
+      <!-- ========== T17: POSITION, FLOAT AND NAVIGATION ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t17">
+        <h2>17. Position, float and navigation</h2>
+        <p>
+          <strong>Open:</strong> lab-css.html · L14–L15, L18; lab-layout.html · L33</p>
+        <p>
+          <strong>Explain:</strong> Relative establishes a positioning context; absolute uses the containing block. Fixed uses the viewport in this example. Sticky stays within its scrolling container. Float lets inline text wrap; clear moves below floats.</p>
+        <p>
+          <strong>Demonstrate:</strong> Compare display:none and visibility:hidden. Scroll the sticky demo. Open details by keyboard.</p>
+        <p>
+          <strong>Student task:</strong> Move the absolute badge without changing its parent position.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student names which box defines the offsets and sees why z-index is contextual.</p>
+        <p>
+          <strong>Watch for:</strong> Using absolute positioning for the entire page; hover-only access on touch devices.</p>
+      </section>
+      <!-- ========== T18: POLISH AND ADVANCED VISUAL CSS ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t18">
+        <h2>18. Polish and advanced visual CSS</h2>
+        <p>
+          <strong>Open:</strong> lab-css.html · L16–L19, L23; lab-layout.html · L32</p>
+        <p>
+          <strong>Explain:</strong> Gradients are images. Shadows do not change layout size. Transforms change appearance, transitions interpolate changes, and keyframes define animation stages. Masks use alpha/luminance; clip-path clips geometry. 3D needs perspective and preserve-3d.</p>
+        <p>
+          <strong>Demonstrate:</strong> Change one property in each experiment; do not teach every effect in one sitting. Check reduced-motion settings.</p>
+        <p>
+          <strong>Student task:</strong> Build one subtle transition with a keyboard equivalent.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student identifies which styles are optional decoration rather than structure.</p>
+        <p>
+          <strong>Watch for:</strong> Animating essential information; confusing transform with layout movement.</p>
+      </section>
+      <!-- ========== T19: VARIABLES, UNITS AND FEATURE QUERIES ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t19">
+        <h2>19. Variables, units and feature queries</h2>
+        <p>
+          <strong>Open:</strong> lab-css.html · L20–L21; css/lab-css.css · C20; js/lab-css.js</p>
+        <p>
+          <strong>Explain:</strong> A custom property stores a reusable value. var has a fallback. @property registers a type. calc, min, max and clamp calculate values. @supports tests browser capability, while media queries test media conditions.</p>
+        <p>
+          <strong>Demonstrate:</strong> Change --space, then use the button that changes --panel-accent. Resize the viewport.</p>
+        <p>
+          <strong>Student task:</strong> Create a spacing variable and use it twice.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student explains the difference between CSS variables and JavaScript variables.</p>
+        <p>
+          <strong>Watch for:</strong> Assuming a custom property knows its type without registration; using experimental features without fallbacks.</p>
+      </section>
+      <!-- ========== T20: PRINT, COLUMNS AND COUNTERS ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t20">
+        <h2>20. Print, columns and counters</h2>
+        <p>
+          <strong>Open:</strong> guide.html · H05–H06; css/guide.css · C05–C06, C91; lab-css.html · L20</p>
+        <p>
+          <strong>Explain:</strong> Columns flow content in reading order. Counters generate presentation, not essential source text. Print is a media type; screen-only navigation can be hidden.</p>
+        <p>
+          <strong>Demonstrate:</strong> Use browser Print Preview and compare the site with the printed guide.</p>
+        <p>
+          <strong>Student task:</strong> Add a third itinerary step and confirm numbering adjusts.</p>
+        <p>
+          <strong>Checkpoint:</strong> The guide remains readable with no background colours.</p>
+        <p>
+          <strong>Watch for:</strong> Putting essential words only in pseudo-elements; designing only for the screen.</p>
+      </section>
+      <!-- ========== T21: JAVASCRIPT EXTENSION: LOCAL ITINERARY ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t21">
+        <h2>21. JavaScript extension: local itinerary</h2>
+        <p>
+          <strong>Open:</strong> planner.html · H04–H05; js/planner.js · J01–J04</p>
+        <p>
+          <strong>Explain:</strong> This is beyond HTML/CSS. Variables hold state, events trigger actions, DOM methods update the page, and JSON serializes arrays. localStorage survives reload on this origin; it is not a database.</p>
+        <p>
+          <strong>Demonstrate:</strong> Add stops, reload and clear them. Try dragging and the equivalent Add button.</p>
+        <p>
+          <strong>Student task:</strong> Change one available stop and its data-stop value.</p>
+        <p>
+          <strong>Checkpoint:</strong> Saved stops restore; blocked storage shows a useful message.</p>
+        <p>
+          <strong>Watch for:</strong> Using innerHTML for user data; expecting browser storage to synchronize across devices.</p>
+      </section>
+      <!-- ========== T22: JAVASCRIPT EXTENSION: APIS AND SERVER ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t22">
+        <h2>22. JavaScript extension: APIs and server</h2>
+        <p>
+          <strong>Open:</strong> lab.html · H08–H10; js/lab.js; js/route-worker.js; server.py</p>
+        <p>
+          <strong>Explain:</strong> Geolocation requires permission and a secure context. A Worker has no document. EventSource receives events from a server. HTML does not implement these behaviours by itself.</p>
+        <p>
+          <strong>Demonstrate:</strong> Run python server.py, visit localhost:8000/lab.html, calculate the route and start/stop the sample stream. Deny location permission once.</p>
+        <p>
+          <strong>Student task:</strong> Explain each API in one sentence before editing any code.</p>
+        <p>
+          <strong>Checkpoint:</strong> The worker returns 9 km; the stream changes sample seat counts and Stop closes it.</p>
+        <p>
+          <strong>Watch for:</strong> Expecting SSE on a static file host; calling APIs without handling denial or errors.</p>
+      </section>
+      <!-- ========== T23: FINAL REVIEW AND STUDENT OWNERSHIP ==========
+         TEACH: Teacher-facing lesson sequence. -->
+      <section id="t23">
+        <h2>23. Final review and student ownership</h2>
+        <p>
+          <strong>Open:</strong> All pages; chapter-map.html; css/* · C04, C90, C91</p>
+        <p>
+          <strong>Explain:</strong> Accessibility includes semantic structure, text alternatives, focus, labels and readable contrast. Optimization includes sensible image sizes and lazy loading. Framework and icon-provider chapters are comparisons: we intentionally use plain CSS and Ionicons.</p>
+        <p>
+          <strong>Demonstrate:</strong> Navigate the entire site by keyboard, resize it, inspect missing assets and read the chapter map.</p>
+        <p>
+          <strong>Student task:</strong> Have the student add one new page with its own CSS and explain every block.</p>
+        <p>
+          <strong>Checkpoint:</strong> Student can rebuild one card, one form field and one responsive layout without copying.</p>
+        <p>
+          <strong>Watch for:</strong> Claiming a topic is mastered because it appears in the final source.</p>
+      </section>
+      <section>
+        <h2>Setup and full notes</h2>
+        <p>The download includes TEACHER-GUIDE.md with setup, scope decisions, image replacement and debugging instructions. For API lessons, run python server.py from the extracted folder and visit localhost:8000.</p>
+        <p>Use fictional form values only. The site makes no bookings and sends no messages.</p>
+      </section>
+    </main>
+    <!-- ========== H90: FOOTER ==========
+       TEACH: footer, entity for copyright, descriptive navigation links. -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <strong>Discover Toronto.</strong> Your next story starts here.</p>
+        <div class="footer-links">
+          <a href="attraction.html">Attraction details</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="media.html">Media centre</a>
+          <a href="guide.html">City guide</a>
+          <a href="contact.html">Contact</a>
+          <a href="lab.html">Learning lab</a>
+          <a href="teacher-guide.html">Teacher guide</a>
+        </div>
+        <p>
+          <small>© 2026 Discover Toronto. Classroom demo. All events, prices and contact details are fictional.</small>
+        </p>
+      </div>
+    </footer>
+    <!-- ========== H91: EXTERNAL ICON LIBRARY ==========
+       TEACH LATER: Ionicons uses JavaScript web components; it is not an HTML tag built into browsers.
+       Internet is needed for icons and Google Fonts. Text and fallback fonts still work offline. -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

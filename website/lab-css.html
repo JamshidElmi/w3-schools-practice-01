@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ========== H01: DOCUMENT AND HEAD ==========
+         TEACH: doctype selects modern HTML; lang identifies language.
+         charset enables Unicode, viewport supports mobile layouts, and title names the browser tab.
+         The stylesheet link loads this page's separate CSS. Google Fonts needs internet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Change one property, predict the result, then check the browser.">
+    <title>CSS, under the microscope. | Discover Toronto</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/lab-css.css">
+    <!-- ========== H08: INTERNAL CSS COMPARISON ONLY ==========
+       TEACH: this isolated example demonstrates internal CSS. All ordinary page styling stays in lab-css.css. -->
+    <style>
+    .internal-example { color: #174f7e; }
+  </style>
+  </head>
+  <body>
+    <!-- ========== H02: HEADER AND NAVIGATION ==========
+       TEACH: semantic header/nav, relative links, lists, reusable classes.
+       Ionicons are decorative here; visible link text supplies the name. -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <ion-icon name="compass-outline" aria-hidden="true"></ion-icon> Discover Toronto<span aria-hidden="true">.</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="attractions.html">Explore</a>
+            </li>
+            <li>
+              <a href="events.html">Events</a>
+            </li>
+            <li>
+              <a href="planner.html">Plan a trip</a>
+            </li>
+            <li>
+              <a href="booking.html">Book a visit</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ========== H03: MAIN CONTENT ==========
+       TEACH: one main landmark and one descriptive h1; heading order matters. -->
+    <main class="container" id="main">
+      <div class="page-heading">
+        <p class="eyebrow">A little curiosity. A whole city.</p>
+        <h1>CSS, under the microscope.</h1>
+        <p class="lead">Change one property, predict the result, then check the browser.</p>
+      </div>
+      <!-- ========== L10: COLOUR AND BACKGROUNDS ==========
+         TEACH: Compare named colours, HEX, RGB/RGBA and HSL/HSLA. Background layers paint front to back. -->
+      <section id="l10">
+        <h2>Colour and backgrounds</h2>
+        <p>Compare named colours, HEX, RGB/RGBA and HSL/HSLA. Background layers paint front to back.</p>
+        <div class="swatches">
+          <span class="named">Named</span>
+          <span class="hex">HEX</span>
+          <span class="rgb">RGBA</span>
+          <span class="hsl">HSLA</span>
+        </div>
+        <div class="background-demo">Two backgrounds, padding-box origin, border-box clip.</div>
+      </section>
+      <!-- ========== L11: BOX MODEL AND MARGIN COLLAPSE ==========
+         TEACH: Inspect content, padding, border, margin and outline in DevTools. Adjacent vertical block margins can collapse. -->
+      <section id="l11">
+        <h2>Box model and margin collapse</h2>
+        <p>Inspect content, padding, border, margin and outline in DevTools. Adjacent vertical block margins can collapse.</p>
+        <div class="box-demo">Content area</div>
+        <div class="collapse-demo">
+          <p>Bottom margin: 30px</p>
+          <p>Top margin: 20px. Gap is 30px, not 50px.</p>
+        </div>
+      </section>
+      <!-- ========== L12: TYPOGRAPHY AND TEXT EFFECTS ==========
+         TEACH: Test alignment, decoration, transformation, spacing, font fallback, wrapping and truncation. -->
+      <section id="l12">
+        <h2>Typography and text effects</h2>
+        <p>Test alignment, decoration, transformation, spacing, font fallback, wrapping and truncation.</p>
+        <p class="type-demo">A city worth exploring</p>
+        <p class="ellipsis" title="A very long neighbourhood name that does not fit">A very long neighbourhood name that does not fit</p>
+        <p class="word-wrap">averylongunbrokentravelreference012345678901234567890123456789</p>
+      </section>
+      <!-- ========== L13: SELECTORS AND CASCADE ==========
+         TEACH: Compare descendant, child, adjacent sibling and general sibling selectors. Inspect a deliberately scoped !important. -->
+      <section id="l13">
+        <h2>Selectors and cascade</h2>
+        <p>Compare descendant, child, adjacent sibling and general sibling selectors. Inspect a deliberately scoped !important.</p>
+        <div class="selector-demo">
+          <p class="notice" id="cascade-example" data-kind="travel-tip">Which colour wins?</p>
+          <p>Adjacent sibling</p>
+          <p>General sibling</p>
+          <a href="guide.html" data-label="city guide">City guide</a>
+        </div>
+      </section>
+      <!-- ========== L14: DISPLAY, POSITION AND OVERFLOW ==========
+         TEACH: Compare none with hidden, inline-block with block, and absolute positioning relative to a parent. -->
+      <section id="l14">
+        <h2>Display, position and overflow</h2>
+        <p>Compare none with hidden, inline-block with block, and absolute positioning relative to a parent.</p>
+        <div class="position-demo">
+          <span class="position-badge">Absolute badge</span>
+          <p>Relative parent</p>
+          <span class="inline-demo">Inline block</span>
+          <span class="invisible">Invisible but occupies space</span>
+          <span class="removed">No layout space</span>
+        </div>
+        <div class="overflow-demo">Long content<br>Second line<br>Third line<br>Fourth line<br>Fifth line<br>Sixth line</div>
+      </section>
+      <!-- ========== L15: FLOAT AND CLEAR ==========
+         TEACH: Float is useful for wrapping text around an image; use Flexbox or Grid for most page layouts. -->
+      <section id="l15">
+        <h2>Float and clear</h2>
+        <p>Float is useful for wrapping text around an image; use Flexbox or Grid for most page layouts.</p>
+        <div class="float-demo">
+          <img src="assets/placeholder.png" alt="Image placeholder; replace with a city photograph" width="1536" height="1024">
+          <p>This text wraps around a floated placeholder image. Add more sentences to see how the text moves beside it. A floated object leaves normal block flow. The clearfix below contains the float.</p>
+        </div>
+        <p class="clear-demo">This starts below both floats.</p>
+      </section>
+      <!-- ========== L16: GRADIENTS, BORDERS AND SHADOWS ==========
+         TEACH: Gradients are generated CSS images; border-image can use a gradient or an image. -->
+      <section id="l16">
+        <h2>Gradients, borders and shadows</h2>
+        <p>Gradients are generated CSS images; border-image can use a gradient or an image.</p>
+        <div class="effects-row">
+          <div class="linear">Linear</div>
+          <div class="radial">Radial</div>
+          <div class="conic">Conic</div>
+        </div>
+        <p class="border-image">A gradient border image</p>
+      </section>
+      <!-- ========== L17: TRANSFORMS, TRANSITIONS AND ANIMATION ==========
+         TEACH: Hover or focus the tile. Transform changes appearance without reflow. Reduced-motion preferences disable motion. -->
+      <section id="l17">
+        <h2>Transforms, transitions and animation</h2>
+        <p>Hover or focus the tile. Transform changes appearance without reflow. Reduced-motion preferences disable motion.</p>
+        <div class="transform-tile" tabindex="0">Hover or focus</div>
+        <div class="motion-dot" aria-hidden="true"></div>
+      </section>
+      <!-- ========== L18: TOOLTIP AND DROPDOWN ==========
+         TEACH: Hover and focus-within reveal the tooltip. Native details provides an accessible click/touch dropdown. -->
+      <section id="l18">
+        <h2>Tooltip and dropdown</h2>
+        <p>Hover and focus-within reveal the tooltip. Native details provides an accessible click/touch dropdown.</p>
+        <span class="tooltip-wrap">
+          <button type="button" aria-describedby="tip">About the sample price</button>
+          <span class="tooltip" id="tip" role="tooltip">Practice data only.</span>
+        </span>
+        <details class="dropdown">
+          <summary>Choose a guide</summary>
+          <ul>
+            <li>
+              <a href="guide.html">City guide</a>
+            </li>
+            <li>
+              <a href="attraction.html">Waterfront guide</a>
+            </li>
+          </ul>
+        </details>
+      </section>
+      <!-- ========== L19: IMAGE SHAPES, MASKS AND SPRITES ==========
+         TEACH: The same placeholder is cropped, filtered and masked. A sprite shows different areas of one background image. -->
+      <section id="l19">
+        <h2>Image shapes, masks and sprites</h2>
+        <p>The same placeholder is cropped, filtered and masked. A sprite shows different areas of one background image.</p>
+        <div class="effects-row">
+          <div class="overlay-photo">
+            <img src="assets/placeholder.png" alt="Image placeholder; replace with a city photograph" width="1536" height="1024">
+            <span>Hover image</span>
+          </div>
+          <img src="assets/placeholder.png" alt="Image placeholder; replace with a city photograph" width="1536" height="1024" class="circle-photo">
+          <img src="assets/placeholder.png" alt="Image placeholder; replace with a city photograph" width="1536" height="1024" class="masked-photo">
+        </div>
+        <p>
+          <span class="sprite sprite-left" role="img" aria-label="Left crop of placeholder"></span>
+          <span class="sprite sprite-right" role="img" aria-label="Right crop of placeholder"></span>
+        </p>
+      </section>
+      <!-- ========== L20: VARIABLES, MATH AND FEATURE QUERIES ==========
+         TEACH: Custom properties reuse values; var provides a fallback. Math sets fluid sizes. @supports enables an enhancement. -->
+      <section id="l20">
+        <h2>Variables, math and feature queries</h2>
+        <p>Custom properties reuse values; var provides a fallback. Math sets fluid sizes. @supports enables an enhancement.</p>
+        <div class="variable-demo">
+          <p>A flexible information panel.</p>
+          <button id="change-accent">Change this panel colour</button>
+        </div>
+        <div class="nested-counter">
+          <div>Morning<div>Walk</div>
+            <div>Picnic</div>
+          </div>
+          <div>Afternoon</div>
+        </div>
+      </section>
+      <!-- ========== L21: CUSTOM FONT AND ERROR INSPECTION ==========
+         TEACH: A local font face tries an installed Arial font. Use DevTools to find the intentionally invalid value in this isolated rule. -->
+      <section id="l21">
+        <h2>Custom font and error inspection</h2>
+        <p>A local font face tries an installed Arial font. Use DevTools to find the intentionally invalid value in this isolated rule.</p>
+        <p class="custom-font">A locally available font, with a fallback.</p>
+        <p class="error-demo">This text keeps its inherited colour because the invalid declaration is ignored.</p>
+        <div class="resize-demo">Drag the bottom corner to resize this box.</div>
+      </section>
+      <!-- ========== L22: INLINE AND INTERNAL COMPARISON ==========
+         TEACH: inline style affects one element; internal style affects this document.
+         Inspect why the inline colour wins. Prefer the external CSS file for normal work. -->
+      <section id="l22">
+        <h2>Three places to write CSS</h2>
+        <p class="internal-example" style="color: #a93917;">Inline colour wins over the internal class rule.</p>
+        <p class="internal-example">This uses the internal class rule.</p>
+        <p>The rest of this page uses css/lab-css.css.</p>
+      </section>
+      <!-- ========== L23: PNG AND SVG MASKS ==========
+         TEACH: PNG mask luminance uses brightness; SVG mask uses a vector silhouette. -->
+      <section id="l23">
+        <h2>PNG and SVG masks</h2>
+        <img class="png-mask" src="assets/placeholder.png" width="300" height="200" alt="Placeholder with a PNG luminance mask">
+        <img class="svg-mask" src="assets/placeholder.png" width="300" height="200" alt="Placeholder with a circular SVG mask">
+      </section>
+    </main>
+    <!-- ========== H90: FOOTER ==========
+       TEACH: footer, entity for copyright, descriptive navigation links. -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <strong>Discover Toronto.</strong> Your next story starts here.</p>
+        <div class="footer-links">
+          <a href="attraction.html">Attraction details</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="media.html">Media centre</a>
+          <a href="guide.html">City guide</a>
+          <a href="contact.html">Contact</a>
+          <a href="lab.html">Learning lab</a>
+          <a href="teacher-guide.html">Teacher guide</a>
+        </div>
+        <p>
+          <small>© 2026 Discover Toronto. Classroom demo. All events, prices and contact details are fictional.</small>
+        </p>
+      </div>
+    </footer>
+    <!-- ========== H91: EXTERNAL ICON LIBRARY ==========
+       TEACH LATER: Ionicons uses JavaScript web components; it is not an HTML tag built into browsers.
+       Internet is needed for icons and Google Fonts. Text and fallback fonts still work offline. -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/lab-css.js" defer></script>
+  </body>
+</html>
