@@ -1,5 +1,7 @@
 # Discover Toronto — HTML & CSS teaching project
 
+Live site: https://jamshidelmi.github.io/w3-schools-practice-01/ (published from `website/` by GitHub Pages on every push to `main`).
+
 1. Extract the ZIP.
 2. Read TEACHER-GUIDE.md first.
 3. Open website/index.html in your browser.
